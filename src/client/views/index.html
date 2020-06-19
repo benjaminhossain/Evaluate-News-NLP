@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <link rel="stylesheet" href="/styles/resets.css">
+        <link rel="stylesheet" href="/styles/base.css">
+        <link rel="stylesheet" href="/styles/header.css">
+        <link rel="stylesheet" href="/styles/form.css">
+        <link rel="stylesheet" href="/styles/footer.css">
+    </head>
+
+    <body>
+
+        <header>
+            <div id="logo">
+                News Evaluation
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div id = "form_box">
+                    <h2>Analyze News</h2>
+                    <form>
+                        <label for="articleUrl">Enter An Article URL:</label>
+                        <input id="articleUrl" type="text" name="input" value="" onblur="onBlur()" placeholder="https://www.exapmple.com">
+                        <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    </form>
+                </div>
+            </section>
+            <section id = "evaluation">
+                <h1>Analysis</h1>
+                <h3>Category: <span id="category"></span></h3>
+                <h3>Polarity: <span id="polarity"></span></h3>
+                <h3>Subjectivity: <span id="subjectivity"></span></h3>
+            <section>
+        </main>
+
+        <footer>
+            <p>Benjamin Hossain</p>
+        </footer>
+
+    </body>
+</html>
