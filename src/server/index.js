@@ -27,24 +27,6 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
   });
 
-/*
-//Classify POST Route
-app.post("/classify", function (req, res) {
-
-    textapi.classify ({
-        'url': req.body.url
-    }, function (error, response) {
-        if (error === null){ //if there's no error
-            console.log(response);
-            res.send(response)
-        } else {
-            console.log('Error: ', error)
-        }
-    })
-})
-*/
-
-//Sentiment POST Route
 app.post("/addData", function (req, res) {
 
     textapi.sentiment({

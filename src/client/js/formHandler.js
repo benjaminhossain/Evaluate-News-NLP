@@ -18,6 +18,7 @@ function handleSubmit(event) {
             console.log(res);
             document.getElementById('polarity').innerHTML = res.polarity
             document.getElementById('subjectivity').innerHTML = res.subjectivity
+            document.getElementById('text').innerHTML = res.text
         })
     } else {
         alert('Please enter a valid URL')

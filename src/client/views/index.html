@@ -31,12 +31,22 @@
                 <h1>Analysis</h1>
                 <h3>Polarity: <span id="polarity"></span></h3>
                 <h3>Subjectivity: <span id="subjectivity"></span></h3>
+                <span id="text"></span>
             <section>
         </main>
 
         <footer>
             <p> &copy Benjamin Hossain</p>
         </footer>
+        <script>
+           // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./service-worker.js');
+                });
+            } 
+           </script>
 
     </body>
 </html>
