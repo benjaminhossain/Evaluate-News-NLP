@@ -23,6 +23,6 @@ function handleSubmit(event) {
     } else {
         alert('Please enter a valid URL')
     }
-
+    form.reset()
 }
 export { handleSubmit }
