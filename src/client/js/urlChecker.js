@@ -3,4 +3,4 @@ function isValidUrl (urlInput) {
     return regex.test(urlInput)
 }
 
-export { isValidUrl } //
+export { isValidUrl }  

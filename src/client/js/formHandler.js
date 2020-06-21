@@ -6,7 +6,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     const url = document.getElementById('articleUrl').value
     
-    if (Client.isValidUrl(url)){
+    if (Client.isValidUrl(url)){ //if it's a valid URL
         fetch('http://localhost:8080/addData', {
             method: "POST",
             credentials: "same-origin",
