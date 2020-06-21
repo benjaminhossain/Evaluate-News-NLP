@@ -11,6 +11,6 @@ console.log(checkForName);
 
 
 export {
-    checkForName,
+    urlChecker,
     handleSubmit   
 }

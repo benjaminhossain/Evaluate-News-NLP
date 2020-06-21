@@ -1,28 +1,68 @@
+//.env
 const dotenv = require('dotenv');
 dotenv.config();
 
-var path = require('path')
+//Express
 const express = require('express')
-var aylien = require("aylien_textapi");
-
 const app = express()
 
-// cors 
+//bp
+
+//Cors
+const cors = require('cors');
+app.use(cors());
+
+var path = require('path')
 
 app.use(express.static('dist'))
 app.use(express.json())
 
 console.log(__dirname)
 
-// set aylien API credentias
+// set aylien API credentials
+var aylien = require("aylien_textapi");
+
 var textapi = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY
   });
 
-app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+/*
+//Classify POST Route
+app.post("/classify", function (req, res) {
+
+    textapi.classify ({
+        'url': req.body.url
+    }, function (error, response) {
+        if (error === null){ //if there's no error
+            console.log(response);
+            res.send(response)
+        } else {
+            console.log('Error: ', error)
+        }
+    })
+})
+*/
+
+//Sentiment POST Route
+app.post("/addData", function (req, res) {
+
+    textapi.sentiment({
+        'url': req.body.url, 
+        'mode': 'document'
+    }, function (error, response) {
+        if (error === null) {
+            console.log(response)
+            res.send(response)
+        } else {
+            console.log('Error: ', error)
+        }
+    })
+})
+
+//GET Route
+app.get('/', function (req, res){
+    res.sendFile('dist/index.html')
 })
 
 // designates what port the app will listen to for incoming requests
@@ -30,4 +70,4 @@ app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
 })
 
-
+module.exports = app;

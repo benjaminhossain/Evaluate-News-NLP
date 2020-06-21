@@ -4,15 +4,24 @@ function handleSubmit(event) {
     const form = document.getElementsByTagName('form')
 
     // check what text was put into the form field
-    let formText = document.getElementById('articleUrl').value
-    Client.checkForName(formText)
+    const url = document.getElementById('articleUrl').value
+    
+    if (Client.isValidUrl(url)){
+        fetch('http://localhost:8080/addData', {
+            method: "POST",
+            credentials: "same-origin",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({url : url}) 
+        })
+        .then(res => res.json())
+        .then(function(res) {
+            console.log(res);
+            document.getElementById('polarity').innerHTML = res.polarity
+            document.getElementById('subjectivity').innerHTML = res.subjectivity
+        })
+    } else {
+        alert('Please enter a valid URL')
+    }
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
 }
-
 export { handleSubmit }
