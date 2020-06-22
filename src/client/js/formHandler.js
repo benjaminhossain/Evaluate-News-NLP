@@ -7,7 +7,7 @@ function handleSubmit(event) {
     const url = document.getElementById('articleUrl').value
     
     if (Client.isValidUrl(url)){ //if it's a valid URL
-        fetch('http://localhost:8080/addData', {
+        fetch('http://localhost:8081/addData', {
             method: "POST",
             credentials: "same-origin",
             headers: { "Content-Type": "application/json" },
