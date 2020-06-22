@@ -12,10 +12,32 @@ process and analyze large amounts of natural language data.
 
 ## Getting started
 
-It would probably be good to first get your basic project setup and functioning. Follow the steps from the course up to Lesson 4 but don't add Service Workers just yet. We won't need the service workers during development and having extra caches floating around just means there's more potential for confusion. So, fork this repo and begin your project setup.
-
-Remember that once you clone, you will still need to install everything:
-
-`cd` into your new folder and run:
+- `git clone`
+- `cd` into your new folder and run:
 - `npm install`
+
+## Setting up the API
+
+### Step 1: Signup for an API key
+First, you will need to go [here](https://developer.aylien.com/signup).
+
+### Step 2: Environment Variables
+- [ ] Require the Aylien npm package
+- [ ] Create a new .env file in the root of your project
+- [ ] Go to your .gitignore file and add .env
+- [ ] Fill the .env file with your API keys like this:
+```
+API_ID=**************************
+API_KEY=**************************
+```
+
+### Step 3: Run
+- On your terminal:
+    - `npm run build-prod`
+    - `npm run build-dev`
+- On a separate terminal:
+    - `npm run start`
+
+### Step 4: Final Step
+- Add a news article to get it evaluated!
 
