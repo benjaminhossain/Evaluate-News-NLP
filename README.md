@@ -31,13 +31,13 @@ API_ID=**************************
 API_KEY=**************************
 ```
 
-### Step 3: Run
+## Run
 - On your terminal:
     - `npm run build-prod`
     - `npm run build-dev`
 - On a separate terminal:
     - `npm run start`
 
-### Step 4: Final Step
-- Add a news article to get it evaluated!
+## Final Step
+- Enter a news article link to get it evaluated!
 
